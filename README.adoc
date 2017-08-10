@@ -5,6 +5,12 @@ Shared Library] which helps support the use of user-defined inline secrets from
 within a `Jenkinsfile`.
 
 
+[WARNING]
+====
+This approach relies on Jenkins instance-specific private key which
+means the encrypted ciphertexts are not portable across Jenkins instances.
+====
+
 == Prerequisites
 
 This Shared Library requires that the
