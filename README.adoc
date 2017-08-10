@@ -1,0 +1,54 @@
+= Inline Pipeline Secrets
+
+This is a link:https://jenkins.io/doc/book/pipeline/shared-libraries[Pipeline
+Shared Library] which helps support the use of user-defined inline secrets from
+within a `Jenkinsfile`.
+
+
+== Prerequisites
+
+This Shared Library requires that the
+link:https://plugins.jenkins.io/workflow-aggregator[Pipeline plugin] and
+link:https://plugins.jenkins.io/mask-passwords[Mask Passwords plugin]
+installed.
+
+
+== Using
+
+=== Decrypting Secrets
+
+A Pipeline can use secrets similar to environment variables:
+
+.Jenkinsfile
+[source,groovy]
+----
+node {
+    stage('Deploy') {
+        withSecrets(
+            AWS_SECRET_ID: '{AQAAABAAAAAQWsBycxCz0x8ouOKJLU9OTvHdsN7kt7+6RAcV2zZJTm4=}'
+        ) {
+            echo "I should be deploying something with: ${env.AWS_SECRET_ID}"
+        }
+    }
+}
+----
+
+=== Encrypting Secrets
+
+A Pipeline can be used to offer a user interface for encrypting.
+
+.Jenkinsfile
+[source,groovy]
+----
+promptUserForEncryption()
+----
+
+== API
+
+`promptUserForEncryption()`
+
+`createSecretText()`
+
+`unsafeSecretAccess()`
+
+`withSecrets()`
