@@ -33,6 +33,8 @@ node {
 }
 ----
 
+image::https://raw.githubusercontent.com/CodeValet/inline-pipeline-secrets/master/assets/with-screenshot.png[Usage in Blue Ocean]
+
 === Encrypting Secrets
 
 A Pipeline can be used to offer a user interface for encrypting.
