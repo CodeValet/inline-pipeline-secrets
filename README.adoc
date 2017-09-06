@@ -4,11 +4,9 @@ This is a link:https://jenkins.io/doc/book/pipeline/shared-libraries[Pipeline
 Shared Library] which helps support the use of user-defined inline secrets from
 within a `Jenkinsfile`.
 
-
 [WARNING]
 ====
-This approach relies on Jenkins instance-specific private key which
-means the encrypted ciphertexts are not portable across Jenkins instances.
+This repository hasn't had a rigorous security evaluation, use at your own risk.
 ====
 
 == Prerequisites
@@ -52,6 +50,13 @@ promptUserForEncryption()
 ----
 
 == API
+
+
+[NOTE]
+====
+This approach relies on Jenkins instance-specific private key which
+means the encrypted ciphertexts are not portable across Jenkins instances.
+====
 
 `promptUserForEncryption()`
 
